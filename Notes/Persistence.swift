@@ -15,6 +15,8 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
             let newItem = Item(context: viewContext)
+            newItem.title = "my plan"
+            newItem.content = "go fishing on Saturday"
             newItem.timestamp = Date()
         }
         do {
@@ -53,3 +55,4 @@ struct PersistenceController {
         })
     }
 }
+

@@ -24,6 +24,9 @@
 		5E585E2A25F730AD00F99101 /* s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E2825F730AD00F99101 /* s2.png */; };
 		5E585E2B25F730AD00F99101 /* s1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E2925F730AD00F99101 /* s1.png */; };
 		5E585E2E25F730F600F99101 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E2D25F730F600F99101 /* README.md */; };
+		5E585E3425F731C500F99101 /* s4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E3125F731C300F99101 /* s4.png */; };
+		5E585E3525F731C500F99101 /* s5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E3225F731C300F99101 /* s5.png */; };
+		5E585E3625F731C500F99101 /* s3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E3325F731C500F99101 /* s3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		5E585E2825F730AD00F99101 /* s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s2.png; sourceTree = "<group>"; };
 		5E585E2925F730AD00F99101 /* s1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s1.png; sourceTree = "<group>"; };
 		5E585E2D25F730F600F99101 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5E585E3125F731C300F99101 /* s4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s4.png; sourceTree = "<group>"; };
+		5E585E3225F731C300F99101 /* s5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s5.png; sourceTree = "<group>"; };
+		5E585E3325F731C500F99101 /* s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,9 @@
 		5E585E2725F7307500F99101 /* docs */ = {
 			isa = PBXGroup;
 			children = (
+				5E585E3225F731C300F99101 /* s5.png */,
+				5E585E3325F731C500F99101 /* s3.png */,
+				5E585E3125F731C300F99101 /* s4.png */,
 				5E585E2925F730AD00F99101 /* s1.png */,
 				5E585E2825F730AD00F99101 /* s2.png */,
 			);
@@ -206,6 +215,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E585DCE25D2920300F99101 /* Preview Assets.xcassets in Resources */,
+				5E585E3425F731C500F99101 /* s4.png in Resources */,
+				5E585E3525F731C500F99101 /* s5.png in Resources */,
+				5E585E3625F731C500F99101 /* s3.png in Resources */,
 				5E585DCB25D2920300F99101 /* Assets.xcassets in Resources */,
 				5E585E2E25F730F600F99101 /* README.md in Resources */,
 				5E585E2B25F730AD00F99101 /* s1.png in Resources */,

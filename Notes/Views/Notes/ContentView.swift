@@ -21,6 +21,7 @@ struct ContentView: View {
     @State var showListSheet = false
     @State var checkedSet = Set<String>()
     @State var selectable = false
+    @State var isActive = false
     
     func filterItem(item:Item) -> Bool {
         return searchBar.text.isEmpty ||
@@ -64,7 +65,9 @@ struct ContentView: View {
                 })
             }
             .add(self.searchBar)
-
+            .background(
+                NavigationLink(destination: CreateNotes(), isActive: $isActive){}
+            )
             .navigationTitle(Text("Notes"))
             .navigationBarItems(
                 
@@ -77,7 +80,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .bottomBar, content: {Text("\(items.count) Notes").font(.system(size: 14, weight: .light, design: .rounded))})
                 ToolbarItem(placement: .bottomBar, content: {Spacer()})
                 ToolbarItem(placement: .bottomBar, content: {
-                    StatefulDeleteButton(checkedSet: $checkedSet, selectable: $selectable)
+                    StatefulDeleteButton(checkedSet: $checkedSet, selectable: $selectable, isActive: $isActive)
                 })
             }
             }

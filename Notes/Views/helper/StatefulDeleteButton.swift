@@ -17,6 +17,7 @@ struct StatefulDeleteButton: View {
     private var items: FetchedResults<Item>
 
     @Binding var selectable: Bool
+    @Binding var isActive: Bool
 
     func deleteInBatches() {
         for val in checkedSet {
@@ -39,11 +40,13 @@ struct StatefulDeleteButton: View {
                 Text("Delete")
             })
         } else {
-            NavigationLink(destination: CreateNotes()) {
+            
+            Button(action:{
+                self.isActive = true
+            }) {
                 Image(systemName: "square.and.pencil")
                     .imageScale(.large)
                     .foregroundColor(Color(.systemYellow))
-
             }
         }
     }

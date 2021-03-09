@@ -20,6 +20,7 @@
 		5E585E0F25EE1E6D00F99101 /* StatefulDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E585E0E25EE1E6D00F99101 /* StatefulDeleteButton.swift */; };
 		5E585E1825EE405300F99101 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E585E1725EE405300F99101 /* SearchBar.swift */; };
 		5E585E1B25EE40E000F99101 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E585E1A25EE40E000F99101 /* ContentView.swift */; };
+		5E585E2225F6202800F99101 /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E585E2125F6202800F99101 /* ViewControllerResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5E585E0E25EE1E6D00F99101 /* StatefulDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulDeleteButton.swift; sourceTree = "<group>"; };
 		5E585E1725EE405300F99101 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		5E585E1A25EE40E000F99101 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5E585E2125F6202800F99101 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		5E585DDB25D3934F00F99101 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E585E2025F61FFF00F99101 /* SearchBar */,
 				5E585E1625EE401800F99101 /* Notes */,
 				5E585E0D25EE1E1A00F99101 /* helper */,
 			);
@@ -114,10 +117,18 @@
 				5E585E0225E4BDDB00F99101 /* NotesListSheet.swift */,
 				5E585E0525E61D5000F99101 /* NotesItem.swift */,
 				5E585E0825E6281A00F99101 /* NotesListFunctionButton.swift */,
-				5E585E1725EE405300F99101 /* SearchBar.swift */,
 				5E585E1A25EE40E000F99101 /* ContentView.swift */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		5E585E2025F61FFF00F99101 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				5E585E1725EE405300F99101 /* SearchBar.swift */,
+				5E585E2125F6202800F99101 /* ViewControllerResolver.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 				5E585E0325E4BDDB00F99101 /* NotesListSheet.swift in Sources */,
 				5E585E1B25EE40E000F99101 /* ContentView.swift in Sources */,
 				5E585E0F25EE1E6D00F99101 /* StatefulDeleteButton.swift in Sources */,
+				5E585E2225F6202800F99101 /* ViewControllerResolver.swift in Sources */,
 				5E585DD025D2920300F99101 /* Persistence.swift in Sources */,
 				5E585E0025E34C0900F99101 /* NotesDetail.swift in Sources */,
 				5E585E0625E61D5000F99101 /* NotesItem.swift in Sources */,

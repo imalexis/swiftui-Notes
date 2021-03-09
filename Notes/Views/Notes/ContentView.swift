@@ -9,6 +9,8 @@ import CoreData
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var searchBar: SearchBar = SearchBar()
+    
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -20,28 +22,35 @@ struct ContentView: View {
     @State var checkedSet = Set<String>()
     @State var selectable = false
     
-    @State var searchInput: String = ""
-
+    func filterItem(item:Item) -> Bool {
+        return searchBar.text.isEmpty ||
+            (item.title != nil && item.title!.contains(searchBar.text)) ||
+            (item.content != nil &&
+                item.content!.contains(searchBar.text))
+    }
     
-
     var body: some View {
         NavigationView {
             
-            
-            List {
-                HStack {
-                    Image(systemName: "magnifyingglass").foregroundColor(Color(.systemGray))
-                    TextField("Search", text: $searchInput)
-                    Button(action: {}, label: {Image(systemName: "mic.fill").foregroundColor(Color(.systemGray))})
-                    
-                }
-                .padding(7)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
+            List{
+//                HStack {
+//                    Image(systemName: "magnifyingglass").foregroundColor(Color(.systemGray))
+//                    TextField("Search", text: $searchText)
+//                    Button(action: {}, label: {Image(systemName: "mic.fill").foregroundColor(Color(.systemGray))})
+//
+//                }
+//                .padding(7)
+//                .background(Color(.systemGray6))
+//                .cornerRadius(8)
+                
                 
                 
                 ForEach(items) { item in
-                    NotesItem(selectable: $selectable, item: item, checkedSet: $checkedSet)
+                    // FIXIME(click search would panic)
+                    if filterItem(item: item){
+                        NotesItem(selectable: $selectable, item: item, checkedSet: $checkedSet)
+                    }
+                    
                 }
 .onDelete(perform: { indexSet in
                     for index in indexSet {
@@ -54,6 +63,8 @@ struct ContentView: View {
                     }
                 })
             }
+            .add(self.searchBar)
+
             .navigationTitle(Text("Notes"))
             .navigationBarItems(
                 

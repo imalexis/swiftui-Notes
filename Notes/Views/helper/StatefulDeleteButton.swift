@@ -35,20 +35,22 @@ struct StatefulDeleteButton: View {
     }
 
     var body: some View {
-        if selectable {
-            Button(action: { deleteInBatches() }, label: {
-                Text("Delete")
-            })
-        } else {
-            
-            Button(action:{
-                self.isActive = true
-            }) {
-                Image(systemName: "square.and.pencil")
-                    .imageScale(.large)
-                    .foregroundColor(Color(.systemYellow))
+       
+            if selectable {
+                Button(action: { deleteInBatches() }, label: {
+                    Text("Delete")
+                })
+            } else {
+                
+                Button(action:{
+                    self.isActive = true
+                }) {
+                    
+                    Image(systemName: "square.and.pencil")
+                        .imageScale(.large)
+                }
             }
-        }
+
     }
 
 //    struct StatefulDeleteButton_Previews: PreviewProvider {

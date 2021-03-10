@@ -27,6 +27,7 @@
 		5E585E3425F731C500F99101 /* s4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E3125F731C300F99101 /* s4.png */; };
 		5E585E3525F731C500F99101 /* s5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E3225F731C300F99101 /* s5.png */; };
 		5E585E3625F731C500F99101 /* s3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E3325F731C500F99101 /* s3.png */; };
+		5E585E4725F8E09700F99101 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E585E4625F8E09700F99101 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		5E585E3125F731C300F99101 /* s4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s4.png; sourceTree = "<group>"; };
 		5E585E3225F731C300F99101 /* s5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s5.png; sourceTree = "<group>"; };
 		5E585E3325F731C500F99101 /* s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s3.png; sourceTree = "<group>"; };
+		5E585E4625F8E09700F99101 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				5E585E0E25EE1E6D00F99101 /* StatefulDeleteButton.swift */,
+				5E585E4625F8E09700F99101 /* Formatter.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E585DEE25E20EF700F99101 /* CreateNotes.swift in Sources */,
+				5E585E4725F8E09700F99101 /* Formatter.swift in Sources */,
 				5E585E0325E4BDDB00F99101 /* NotesListSheet.swift in Sources */,
 				5E585E1B25EE40E000F99101 /* ContentView.swift in Sources */,
 				5E585E0F25EE1E6D00F99101 /* StatefulDeleteButton.swift in Sources */,

@@ -32,7 +32,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            
+           
             List{
 //                HStack {
 //                    Image(systemName: "magnifyingglass").foregroundColor(Color(.systemGray))
@@ -84,6 +84,8 @@ struct ContentView: View {
                 })
             }
             }
+        // Color("button") <- button -> button color file
+        .accentColor(Color("buttonColor"))
         }
     }
 

@@ -36,14 +36,14 @@ struct NotesItem: View {
                     HStack(alignment: .center) {
                         VStack(alignment: .leading) {
                             Text("\(item.title ?? "")")
-                                .font(.system(size: 20, weight: .bold, design: .rounded))
+                                .font(.system(size: 20, weight: .medium, design: .rounded))
                             HStack {
                                 if item.timestamp != nil {
                                 Text("\(item.timestamp!, formatter: itemFormatter)")
-                                    .font(.system(size: 16, weight: .light, design: .rounded))
+                                    .font(.system(size: 16, weight: .thin, design: .rounded))
                                 }
                                 Text("\(item.content ?? "")")
-                                    .font(.system(size: 16, weight: .light, design: .rounded))
+                                    .font(.system(size: 16, weight: .thin, design: .rounded))
                             }
                             
                         }

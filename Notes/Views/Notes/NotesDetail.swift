@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .medium
@@ -31,8 +33,6 @@ struct NotesDetail: View {
                     // how to split string by \n in swift
                     // let firstLineBreak = value.firstIndex(of: "\n")
                     let inputTextArr = inputText.split(maxSplits: 1, whereSeparator: { $0 == "\n" }).map(String.init)
-                   
-                    print(value)
                     
                     if inputText.count == 2 {
                         do {

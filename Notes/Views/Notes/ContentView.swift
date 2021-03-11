@@ -9,8 +9,8 @@ import CoreData
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var searchBar: SearchBar = SearchBar()
-    
+    @ObservedObject var searchBar = SearchBar()
+
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -22,18 +22,17 @@ struct ContentView: View {
     @State var checkedSet = Set<String>()
     @State var selectable = false
     @State var isActive = false
-    
-    func filterItem(item:Item) -> Bool {
+
+    func filterItem(item: Item) -> Bool {
         return searchBar.text.isEmpty ||
             (item.title != nil && item.title!.contains(searchBar.text)) ||
             (item.content != nil &&
                 item.content!.contains(searchBar.text))
     }
-    
+
     var body: some View {
         NavigationView {
-           
-            List{
+            List {
 //                HStack {
 //                    Image(systemName: "magnifyingglass").foregroundColor(Color(.systemGray))
 //                    TextField("Search", text: $searchText)
@@ -43,17 +42,13 @@ struct ContentView: View {
 //                .padding(7)
 //                .background(Color(.systemGray6))
 //                .cornerRadius(8)
-                
-                
-                
+
                 ForEach(items) { item in
-                    // FIXIME(click search would panic)
-                    if filterItem(item: item){
+                    if filterItem(item: item) {
                         NotesItem(selectable: $selectable, item: item, checkedSet: $checkedSet)
                     }
-                    
                 }
-.onDelete(perform: { indexSet in
+                .onDelete(perform: { indexSet in
                     for index in indexSet {
                         viewContext.delete(items[index])
                     }
@@ -66,34 +61,30 @@ struct ContentView: View {
             }
             .add(self.searchBar)
             .background(
-                NavigationLink(destination: CreateNotes(), isActive: $isActive){}
+                NavigationLink(destination: CreateNotes(), isActive: $isActive) {}
             )
             .navigationTitle(Text("Notes"))
             .navigationBarItems(
-                
                 trailing: NotesListFunctionButton(selectable: $selectable, showListSheet: $showListSheet, checkedSet: $checkedSet))
             .sheet(isPresented: $showListSheet) {
                 NotesListSheet(selectable: $selectable)
             }
             .toolbar {
-                ToolbarItem(placement: .bottomBar, content: {Spacer()})
-                ToolbarItem(placement: .bottomBar, content: {Text("\(items.count) Notes").font(.system(size: 14, weight: .light, design: .rounded))})
-                ToolbarItem(placement: .bottomBar, content: {Spacer()})
+                ToolbarItem(placement: .bottomBar, content: { Spacer() })
+                ToolbarItem(placement: .bottomBar, content: { Text("\(items.count) Notes").font(.system(size: 14, weight: .light, design: .rounded)) })
+                ToolbarItem(placement: .bottomBar, content: { Spacer() })
                 ToolbarItem(placement: .bottomBar, content: {
                     StatefulDeleteButton(checkedSet: $checkedSet, selectable: $selectable, isActive: $isActive)
                 })
             }
-            }
+        }
         // Color("button") <- button -> button color file
         .accentColor(Color("buttonColor"))
-        }
     }
-
-
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
-

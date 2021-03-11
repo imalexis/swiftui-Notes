@@ -1,0 +1,6 @@
+framework module KeyboardKitSwiftUI {
+  umbrella header "KeyboardKitSwiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -21,16 +21,6 @@ struct NotesItem: View {
     
     var body: some View {
         HStack {
-//        if selectable {
-//            Button(action: {
-//
-//                    }, label: {
-//                        Text("Hello World")
-//                            .padding(.all, 5)
-//                            .background(self.selectable ? Color.blue : Color.white)
-//                            .foregroundColor(self.selectable ? Color.white : Color.blue)
-//                    })
-//        }
             if !selectable {
                 NavigationLink(destination: NotesDetail(item: item, inputText: "\(item.title ?? "") \n \(item.content ?? "")")) {
                     HStack(alignment: .center) {

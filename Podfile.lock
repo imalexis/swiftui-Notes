@@ -1,0 +1,20 @@
+PODS:
+  - KeyboardKit (3.6.3)
+  - KeyboardKitSwiftUI (3.6.3):
+    - KeyboardKit (~> 3.6.1)
+
+DEPENDENCIES:
+  - KeyboardKitSwiftUI
+
+SPEC REPOS:
+  trunk:
+    - KeyboardKit
+    - KeyboardKitSwiftUI
+
+SPEC CHECKSUMS:
+  KeyboardKit: 7fe3cf67662113f4a60f1522f8654a261fadb27d
+  KeyboardKitSwiftUI: 0579083577cd1b0248bb421c3d2414c48ed95c7c
+
+PODFILE CHECKSUM: d6c2179f529bbe93bc05bcb15973b318966b4889
+
+COCOAPODS: 1.10.1

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import KeyboardKit
 
 
 private let itemFormatter: DateFormatter = {
@@ -29,29 +29,46 @@ struct NotesDetail: View {
         
             Text("\(item.timestamp!, formatter: itemFormatter)")
             TextEditor(text: $inputText)
-                .onChange(of: inputText, perform: { value in
-                    // how to split string by \n in swift
-                    // let firstLineBreak = value.firstIndex(of: "\n")
-                    let inputTextArr = inputText.split(maxSplits: 1, whereSeparator: { $0 == "\n" }).map(String.init)
-                    
+                .keyboardType(.default)
+                .autocapitalization(.none)
+                .lineSpacing(10)
+                .onChange(of: inputText,
+                  perform: { value in
+                   
+                    var inputTextArr = value.split(maxSplits: 1, whereSeparator: { $0 == "\n" }).map(String.init)
+                    print("inputText", inputText, "value", value, "arr", inputTextArr.count)
                     if inputText.count == 2 {
                         do {
-                            item.title = inputTextArr[0]
-                            item.content = inputTextArr[1]
-                            try viewContext.save()
-                        } catch {
-                            print("error")
-                        }
-                    } else {
+                               item.title = inputTextArr[0]
+                               item.content = inputTextArr[1]
+                               try viewContext.save()
+                               print("save done")
+                       } catch {
+                               print("error")
+                       }
+                    }
+                    
+                    if inputText.count == 1 {
                         do {
                             item.title = inputTextArr[0]
                             item.content = ""
                             try viewContext.save()
+                            print("save done")
                         } catch {
                             print("error")
                         }
                     }
-
+                    
+                    if inputText.count == 0 {
+                        do {
+                            item.title = ""
+                            item.content = ""
+                            try viewContext.save()
+                            print("save done")
+                        } catch {
+                            print("error")
+                        }
+                    }
                 }).frame(height: 400)
         
         }

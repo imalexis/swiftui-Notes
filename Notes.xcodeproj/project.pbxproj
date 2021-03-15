@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,9 @@
 		5E585E3525F731C500F99101 /* s5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E3225F731C300F99101 /* s5.png */; };
 		5E585E3625F731C500F99101 /* s3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E585E3325F731C500F99101 /* s3.png */; };
 		5E585E4725F8E09700F99101 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E585E4625F8E09700F99101 /* Formatter.swift */; };
+		5E585E7D25FB530D00F99101 /* NotesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E585E7C25FB530D00F99101 /* NotesList.swift */; };
+		5E585E8125FB5D6800F99101 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E585E8025FB5D6800F99101 /* ImagePickerView.swift */; };
+		5EA1D40D25FF5E4E00984F30 /* ImagePickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1D40C25FF5E4E00984F30 /* ImagePickerSheet.swift */; };
 		8592B599456CBB9D683E2866 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B183F68F962CD1D00C957A90 /* Pods_Notes.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		5E585E3225F731C300F99101 /* s5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s5.png; sourceTree = "<group>"; };
 		5E585E3325F731C500F99101 /* s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s3.png; sourceTree = "<group>"; };
 		5E585E4625F8E09700F99101 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		5E585E7C25FB530D00F99101 /* NotesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesList.swift; sourceTree = "<group>"; };
+		5E585E8025FB5D6800F99101 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		5EA1D40C25FF5E4E00984F30 /* ImagePickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerSheet.swift; sourceTree = "<group>"; };
 		6366BEB5D344BAD358BF2F3C /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		B183F68F962CD1D00C957A90 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E584B9B7E2748F01DF01AAC0 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		5E585DDB25D3934F00F99101 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E585E7F25FB5CE500F99101 /* CamaraAndPhotoLibrary */,
 				5E585E2025F61FFF00F99101 /* SearchBar */,
 				5E585E1625EE401800F99101 /* Notes */,
 				5E585E0D25EE1E1A00F99101 /* helper */,
@@ -142,6 +149,8 @@
 				5E585E0525E61D5000F99101 /* NotesItem.swift */,
 				5E585E0825E6281A00F99101 /* NotesListFunctionButton.swift */,
 				5E585E1A25EE40E000F99101 /* ContentView.swift */,
+				5E585E7C25FB530D00F99101 /* NotesList.swift */,
+				5EA1D40C25FF5E4E00984F30 /* ImagePickerSheet.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -167,6 +176,14 @@
 			path = docs;
 			sourceTree = "<group>";
 		};
+		5E585E7F25FB5CE500F99101 /* CamaraAndPhotoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				5E585E8025FB5D6800F99101 /* ImagePickerView.swift */,
+			);
+			path = CamaraAndPhotoLibrary;
+			sourceTree = "<group>";
+		};
 		6250E4ED7B76144553FC6749 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +198,6 @@
 				6366BEB5D344BAD358BF2F3C /* Pods-Notes.debug.xcconfig */,
 				E584B9B7E2748F01DF01AAC0 /* Pods-Notes.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -310,10 +326,13 @@
 				5E585E1B25EE40E000F99101 /* ContentView.swift in Sources */,
 				5E585E0F25EE1E6D00F99101 /* StatefulDeleteButton.swift in Sources */,
 				5E585E2225F6202800F99101 /* ViewControllerResolver.swift in Sources */,
+				5E585E8125FB5D6800F99101 /* ImagePickerView.swift in Sources */,
 				5E585DD025D2920300F99101 /* Persistence.swift in Sources */,
 				5E585E0025E34C0900F99101 /* NotesDetail.swift in Sources */,
+				5EA1D40D25FF5E4E00984F30 /* ImagePickerSheet.swift in Sources */,
 				5E585E0625E61D5000F99101 /* NotesItem.swift in Sources */,
 				5E585DC725D2920200F99101 /* NotesApp.swift in Sources */,
+				5E585E7D25FB530D00F99101 /* NotesList.swift in Sources */,
 				5E585DD325D2920300F99101 /* Notes.xcdatamodeld in Sources */,
 				5E585E1825EE405300F99101 /* SearchBar.swift in Sources */,
 				5E585E0925E6281A00F99101 /* NotesListFunctionButton.swift in Sources */,

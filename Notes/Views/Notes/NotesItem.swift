@@ -27,47 +27,51 @@ struct NotesItem: View {
                         VStack(alignment: .leading) {
                             Text("\(item.title ?? "")")
                                 .font(.system(size: 20, weight: .medium, design: .rounded))
+                                
                             HStack {
                                 if item.timestamp != nil {
-                                Text("\(item.timestamp!, formatter: itemFormatter)")
-                                    .font(.system(size: 16, weight: .thin, design: .rounded))
+                                    Text("\(item.timestamp!, formatter: itemFormatter)")
+                                        .font(.system(size: 16, weight: .light, design: .rounded))
+                                        .foregroundColor(Color(.systemGray))
                                 }
                                 Text("\(item.content ?? "")")
-                                    .font(.system(size: 16, weight: .thin, design: .rounded))
+                                    .font(.system(size: 16, weight: .light, design: .rounded))
+                                    .foregroundColor(Color(.systemGray))
                             }
-                            
                         }
                     }.frame(height: 50)
                 }
             } else {
                 HStack(alignment: .center) {
+                    if !isChecked {
+                        Button(action: {
+                            isChecked = true
+                            checkedSet.insert(item.id!.uuidString)
+                        }, label: {
+                            Image(systemName: "circle")
+                                .imageScale(.large)
+                                .foregroundColor(Color(.systemGray3))
+                        })
+                    } else {
+                        Button(action: {
+                            isChecked = false
+                            checkedSet.remove(item.id!.uuidString)
+                        }, label: {
+                            Image(systemName: "checkmark.circle")
+                                .imageScale(.large)
+                                .foregroundColor(Color("buttonColor"))
+                        })
+                    }
                     VStack(alignment: .leading) {
+                        Text("\(item.title!)")
+                            .font(.system(size: 20, weight: .medium, design: .rounded))
                         HStack {
-                            if !isChecked {
-                                Button(action: {
-                                    isChecked = true
-                                    checkedSet.insert(item.id!.uuidString)
-                                }, label: {
-                                    Image(systemName: "circle")
-                                        .imageScale(.large)
-                                        .foregroundColor(.gray)
-                                })
-                            } else {
-                                Button(action: {
-                                    isChecked = false
-                                    checkedSet.remove(item.id!.uuidString)
-                                }, label: {
-                                    Image(systemName: "checkmark.circle")
-                                        .imageScale(.large)
-                                        .foregroundColor(.yellow)
-                                })
-                            }
-                            
-                            Text("\(item.title!)")
-                                .font(.system(size: 20, weight: .black, design: .rounded))
+                            Text("\(item.timestamp!, formatter: itemFormatter)")
+                                .font(.system(size: 16, weight: .light, design: .rounded))
+                                .foregroundColor(Color(.systemGray))
                             Text("\(item.content!)")
                                 .font(.system(size: 16, weight: .light, design: .rounded))
-                                .foregroundColor(Color(.systemGray6))
+                                .foregroundColor(Color(.systemGray))
                         }
                     }
                 }
